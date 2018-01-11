@@ -14,6 +14,7 @@ import java.util.List;
 public class SurveyService {
 
     private static List<Survey> surveys = new ArrayList<>();
+
     static {
         Question question1 = new Question("Question1",
                 "Largest Country in the World", "Russia", Arrays.asList(
@@ -91,5 +92,28 @@ public class SurveyService {
         survey.getQuestions().add(question);
 
         return question;
+    }
+
+    public Survey addSurvey(Survey survey) {
+
+        surveys.add(survey);
+
+        return survey;
+    }
+
+    public String getNextId() {
+
+        return "Survey" + (surveys.size() + 1);
+    }
+
+    public void removeSurvey(String surveyId) {
+
+        for (Survey s : surveys) {
+
+            if (s.getId().equals(surveyId)) {
+
+                surveys.remove(s);
+            }
+        }
     }
 }

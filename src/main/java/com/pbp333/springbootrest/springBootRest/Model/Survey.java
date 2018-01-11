@@ -8,6 +8,8 @@ public class Survey {
     private String description;
     private List<Question> questions;
 
+    public Survey(){}
+
     public Survey(String id, String title, String description,
                   List<Question> questions) {
         super();
